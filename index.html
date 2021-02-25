@@ -24,17 +24,16 @@
             Buscar
         </button>
         <input id="input_message" v-model="message" placeholder="Ruta">
-    <button class="btn2" type="button" id="sendData" onclick="sendData()">
-        Enviar
-    </button>
-    <button class="btn2" type="button" id="btnGet" onclick="loadDoc()">
-        Obtener
-    </button>
-    <div id="app">
-        {{ message }}
+        <button class="btn2" type="button" id="sendData" onclick="sendData()">
+            Enviar
+        </button>
+        <button class="btn2" type="button" id="btnGet" onclick="loadDoc()">
+            Obtener
+        </button>
+        <div id="app">
+            {{ message }}
+        </div>
     </div>
-    </div>
-    
       <div class="divTable" id="app-2">
           <table>
             <thead>
@@ -48,7 +47,7 @@
           </table>
           <button class="btn2" id="btnCheck" type="button" id="sendData" onclick="checkServers()">Revisar servidores</button>
       </div>
-
+      
       <script src="app.js"></script>
 </body>
 </html>
