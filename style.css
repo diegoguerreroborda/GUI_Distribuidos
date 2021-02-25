@@ -1,0 +1,158 @@
+html, body {
+  background-color: #151e21;
+  font-family: Arial;
+  display: flex;
+  height: 100%;
+  text-align: center;
+}
+
+.container{
+  height: 350px;
+  width: 430px;
+  place-items: initial;
+}
+
+.container .wrapper{
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapper .icon{
+  font-size: 100px;
+  color: #9658fe;
+}
+
+.wrapper .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B7B;
+}
+
+table{
+  width: 100%;
+  background-color: #252c32;
+  text-align: center;
+  border-collapse: collapse;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 13px;
+  align-items: center;
+}
+
+th{
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+}
+
+td{
+  padding: 10px;
+  color: white;
+}
+
+thead{
+  background-color: #363b40;
+  border-bottom: solid 5px #151e21;
+  color: white;
+}
+
+tr:nth-child(even){
+  background-color: #363b40;
+  color: white;
+}
+
+tr:hover td{
+  background-color: #0099CC;
+  color: white;
+}
+
+.btn1 {
+  /* Color del texo */
+  color: #0099CC;
+  /* Eliminar color de fondo */
+  background: transparent;
+  /* Grosor del borde, estilo de línea y color */
+  border: 2px solid #0099CC;
+  /* Añadir esquinas curvadas */
+  border-radius: 6px;
+  /* Poner texto en mayúsculas */
+  border: none;
+        color: transparent;
+        padding: 8px 16px;
+        text-align: center;
+        display: inline-block;
+        font-size: 10px;
+        margin: 2px 1px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+  }
+
+.btn1 {
+  background-color: transparent; 
+  color: white;
+  border: 2px solid #008CBA;
+}
+
+.btn1:hover {
+  background-color: white;
+  color: #363b40;
+}
+
+.btn2 {
+  /* Color del texo */
+  color: #0099CC;
+  /* Eliminar color de fondo */
+  background: #0099CC;
+  /* Grosor del borde, estilo de línea y color */
+  border: 2px solid #0099CC;
+  /* Añadir esquinas curvadas */
+  border-radius: 6px;
+  /* Poner texto en mayúsculas */
+  border: none;
+        color: transparent;
+        padding: 8px 16px;
+        text-align: center;
+        display: inline-block;
+        font-size: 10px;
+        margin: 2px 1px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+  }
+
+.btn2 {
+  background-color: #00c8e0; 
+  color: white;
+  border: 2px solid #00c8e0;
+}
+
+.btn2:hover {
+  background-color: white;
+  color: #363b40;
+}
