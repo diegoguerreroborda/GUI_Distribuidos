@@ -1,3 +1,5 @@
+var file = "";
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -11,7 +13,7 @@ var app = new Vue({
     const img = document.getElementById("img-main");
     defaultBtn.click();
     defaultBtn.addEventListener("change", function(){
-        const file = this.files[0];
+        file = this.files[0];
         if(file){
             const reader = new FileReader();
             reader.onload = function(){
@@ -34,17 +36,29 @@ var app = new Vue({
 
 function sendData(){
   var url = 'http://localhost:3050/send_image';
-  var data = {username: document.getElementById("input_message").value};
+  var data = {image: document.getElementById("input_message").value};
+  console.log(file)
   fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(data.username), // data can be `string` or {object}!
+    method: 'POST',
     headers:{
-      'Content-Type': document.getElementById("input_message").value
-    }
+      'Content-Type': file.type
+    },
+    body: file
   }).then(res => res.json())
   .catch(error => console.error('Error:', error))
   .then(response => console.log('Success:', response));
   //loadDoc();
+}
+
+function sendData2(){
+  console.log(file)
+  axios({
+    method: 'post',
+    url: 'http://localhost:3050/send_image',
+    data: {
+      firstName: file.type
+    }
+  });
 }
 
 
