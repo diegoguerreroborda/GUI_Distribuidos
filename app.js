@@ -86,3 +86,13 @@ function checkServers(){
       }
   );
 }
+
+function sendEmail(){
+  fetch('http://localhost:3050/send_email')
+  .then(response => response.text())
+  .then( 
+      data => {
+          console.log(data)
+      }
+  );
+}
