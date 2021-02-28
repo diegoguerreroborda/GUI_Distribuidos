@@ -35,7 +35,7 @@ var app = new Vue({
   })
 
 function sendData(){
-  var url = 'http://localhost:3050/send_image';
+ var url = 'http://localhost:3050/send_image';
   var data = {image: document.getElementById("input_message").value};
   console.log(file)
   fetch(url, {
@@ -48,6 +48,8 @@ function sendData(){
   .catch(error => console.error('Error:', error))
   .then(response => console.log('Success:', response));
   //loadDoc();
+
+
 }
 
 function sendData2(){
