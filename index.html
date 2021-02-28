@@ -12,7 +12,7 @@
     <div class="container">
         <div class="wrapper">
             <div class="image">
-                <img id="img-main" src="" alt="">
+                <img id="img-main" name="myFile" src="" alt="">
             </div>
             <div class="content">
                 <div class="icon"><img src="icons/upload.png"></div>
@@ -24,9 +24,18 @@
             Buscar
         </button>
         <input id="input_message" v-model="message" placeholder="Ruta">
-        <button class="btn2" type="button" id="sendData" onclick="sendData()">
-            Enviar
-        </button>
+        <form action="http://localhost:3050/send_imagedad" enctype="multipart/form-data" method="POST" >
+            <button class="btn2" type="submit" id="sendData">
+                Enviar
+            </button>
+
+        </form>
+
+        <form action="http://localhost:3050/send_imagedad" enctype="multipart/form-data" method="POST"> 
+            <input type="file" name="myImage" accept="image/*" />
+            <input type="submit" value="Upload Photo"/>
+          </form>
+
         <button class="btn2" type="button" id="btnGet" onclick="loadDoc()">
             Obtener
         </button>
@@ -51,4 +60,27 @@
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="app.js"></script>
 </body>
+<script>
+function uploadImage(){
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const img = document.querySelector("img");
+    defaultBtn.click();
+    defaultBtn.addEventListener("change", function(){
+        file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src = result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+  }
+
+</script>
+
 </html>
+
+
