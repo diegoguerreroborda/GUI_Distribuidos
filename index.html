@@ -20,42 +20,50 @@
             </div>
         </div>
         <input id="default-btn" type="file" hidden>
+        <!--
         <button type="button" class="btn2" id="custom-btn" onclick="uploadImage()">
             Buscar
         </button>
+        
         <input id="input_message" v-model="message" placeholder="Ruta">
-        <form action="http://localhost:3050/send_imagedad" enctype="multipart/form-data" method="POST" >
-            <button class="btn2" type="submit" id="sendData">
-                Enviar
-            </button>
-
-        </form>
-
+        
+        <button class="btn2" type="submit" id="sendData">
+            Enviar
+        </button>
+        -->
+        <!--
         <form action="http://localhost:3050/send_imagedad" enctype="multipart/form-data" method="POST"> 
-            <input type="file" name="myImage" accept="image/*" />
-            <input type="submit" value="Upload Photo"/>
+            <input class="btn2" type="button" name="myImage" accept="image/*" id="custom-btn" onclick="uploadImage()" value="Buscar"/>
+            <button class="btn2" type="submit">Enviar</button>
+        </form>
+        -->
+        <form action="http://localhost:3050/send_imagedad" enctype="multipart/form-data" method="POST"> 
+            <input class="btn2" type="file" name="myImage" accept="image/*" value="Buscar"/>
+            <input class="btn2" type="submit" value="Enviar" onchange="change('./index.html')" />
           </form>
-
         <button class="btn2" type="button" id="btnGet" onclick="loadDoc()">
             Obtener
         </button>
         <div id="app">
             {{ message }}
         </div>
+        <div class="image">
+            <img id="img-main2" name="myFile" src="" alt="">
+        </div>
     </div>
       <div class="divTable" id="app-2">
           <table>
             <thead>
                 <tr>
-                    <th>Host</th><th>Activo</th><th id="title_reset">Reiniciar</th>
+                    <th>Host</th><th>Activo</th>
                 </tr>
             </thead>
                 <tr class="list-group-item" v-for="server in servers">
-                    <td>{{ server.path }}</td><td>{{ server.alive }}</td><td><button class="btn1" id=btn_reset>Reiniciar</button></td>
+                    <td>{{ server.path }}</td><td>{{ server.alive }}</td>
                 </tr>
           </table>
-          <button class="btn2" id="btnCheck" type="button" id="sendData" onclick="checkServers()">Revisar servidores</button>
-          <button class="btn2" id="btnSendEmail" type="button" id="sendEmail" onclick="sendEmail()">Enviar correo</button>
+          <button class="btn1" id="btnCheck" type="button" id="sendData" onclick="checkServers()">Revisar servidores</button>
+          <button class="btn1" id="btnSendEmail" type="button" id="sendEmail" onclick="sendEmail()">Enviar correo</button>
       </div>
       
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

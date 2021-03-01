@@ -10,7 +10,6 @@ var app = new Vue({
   function uploadImage(){
     const defaultBtn = document.getElementById("default-btn");
     const customBtn = document.getElementById("custom-btn");
-    const img = document.getElementById("img-main");
     defaultBtn.click();
     defaultBtn.addEventListener("change", function(){
         file = this.files[0];
@@ -69,8 +68,30 @@ function loadDoc() {
   .then(response => response.text())
   .then( 
       data => {
+          //console.log(data)
           console.log(data)
-          app.message = `Hola ${data}`
+          //window.location.href = 'data:application/octet-stream;base64,' + data;
+          /*
+          var a = document.createElement("a"); //Create <a>
+          a.href = "data:image/png;base64," + data; //Image Base64 Goes here
+          a.href = a.toDataURL("./image")
+          a.download = "image.png"; //File name Here
+          a.click(); //Downloaded file
+          file = "data:image/png;base64," + data;
+          */
+         let img = document.getElementById("img-main2");
+          img.src = "data:image/png;base64," + data;
+          /*
+          if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src = result;
+                }
+                reader.readAsDataURL(file);
+            }
+            */
+          //app.message = `Hola ${data}`
           //document.getElementById("btnGet").innerHTML = data;
       }
   );
